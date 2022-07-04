@@ -39,13 +39,7 @@ public class Bot extends TelegramLongPollingBot {
 
         try {
             if (update.getMessage().getText().equals("/start")) {
-                Item item = new Item("Где оформить карту Unionpay и сколько это стоит","8 дебетовых карт Unionpay, которые можно открыть сейчас\n" +
-                        "Зачем нужна карта Unionpay\n" +
-                        "Как оформить карту Unionpay\n" +
-                        "Как снять наличные с карты Unionpay\n" +
-                        "Как мы искали карты");
                 sendMessage(chatId, "Вы подписались на рассылку!");
-                sendMessage(chatId, item.build());
                 if (!userRepository.existsByChatId(chatId)) {
                     User user = new User();
                     user.setChatId(chatId);
